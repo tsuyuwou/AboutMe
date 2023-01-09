@@ -16,9 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var numPetsLabel: UILabel!
     @IBOutlet weak var numPetsStepper: UIStepper!
     @IBOutlet weak var morePetsSwitch: UISwitch!
-    @IBOutlet weak var DOBPicker: UIDatePicker!
     @IBOutlet weak var kpopTextField: UITextField!
     @IBOutlet weak var introduceSelfButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +31,15 @@ class ViewController: UIViewController {
     @IBAction func introduceSelfDidTapped(_ sender: UIButton) {
         let year = yearSegmentedControl.titleForSegment(at: yearSegmentedControl.selectedSegmentIndex)
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d, yyyy"
-        let DOB = dateFormatter.string(from: DOBPicker.date)
-        
-        let introduction = "My name is \(firstNameTextField.text!) \(lastNameTextField.text!). I am a \(year!) at \(schoolNameTextField.text!). I \(numPetsLabel.text! == "0" ? "do not own" : "own \(numPetsLabel.text!)") pet\(numPetsLabel.text! == "1" ? "" : "s"). I\(morePetsSwitch.isOn ? "" : " do not") want more pets. I was born on \(DOB). I am a huge \(kpopTextField.text!) fan."
+        let introduction = "My name is \(firstNameTextField.text!) \(lastNameTextField.text!). I am a \(year!) at \(schoolNameTextField.text!). I \(numPetsLabel.text! == "0" ? "do not own" : "own \(numPetsLabel.text!)") pet\(numPetsLabel.text! == "1" ? "" : "s"). I\(morePetsSwitch.isOn ? "" : " do not") want more pets. I am a huge \(kpopTextField.text!) fan."
         
         let alertController = UIAlertController(title: "My Introduction", message: introduction, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Nice to meet you!", style: .default, handler: nil)
+        if kpopTextField.text?.lowercased() == "twice" {
+            imageView.image = UIImage(named: "twice")
+        }
+        let action = UIAlertAction(title: "Nice to meet you!", style: .default) { (action) in
+            self.imageView.image = UIImage(named: "PSU-mark-navy")
+        }
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
     }
