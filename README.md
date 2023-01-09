@@ -25,7 +25,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-![](https://github.com/tsuyuwou/iOSPrework/blob/main/demo.gif =100x20)
+<img src="https://github.com/tsuyuwou/iOSPrework/blob/main/demo.gif" width="50%" height="50%"/>
 
 GIF created with [EZGIF.COM](https://ezgif.com/video-to-gif/).
 
