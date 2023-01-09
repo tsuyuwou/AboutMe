@@ -18,7 +18,7 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [x] User can input date of birth and favorite K-pop group.
+* [x] User can input favorite K-pop group.
 * [x] The alert is more human-readable.
 
 ## Video Walkthrough
